@@ -1,0 +1,26 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class balaji {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\ELCOT\\Downloads\\geckodriver-v0.28.0-win64\\geckodriver.exe");
+		WebDriver driver=new FirefoxDriver();
+		driver.get("https://www.grootan.com");
+		WebElement image = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div/div/div[7]/div[1]/img"));
+		image.click();
+		
+		WebElement name = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div/div/div[7]/div[1]/h3"));
+		System.out.println("enter the name ");;
+		
+		
+		WebElement role = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div/div/div[7]/div[1]/h5"));
+		System.out.println("enter the role ");
+
+		driver.close();
+	}
+
+}

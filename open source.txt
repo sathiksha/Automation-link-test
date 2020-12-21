@@ -1,0 +1,35 @@
+import java.awt.AWTException;
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class source {
+
+	public static void main(String[] args) throws AWTException, IOException {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.gecko.driver","C:\\Users\\ELCOT\\Downloads\\geckodriver-v0.28.0-win64\\geckodriver.exe");
+WebDriver driver =new FirefoxDriver();
+driver.navigate().to("https://www.grootan.com/");
+WebElement source = driver.findElement(By.linkText("Open Source"));
+source.click();
+Robot robot = new Robot();
+Dimension screen =Toolkit.getDefaultToolkit().getScreenSize();
+Rectangle rectangle = new Rectangle(screen);
+BufferedImage sourceFile  = robot.createScreenCapture(rectangle);
+File distinationFile = new File("D:\\open source2.png");
+ImageIO.write(sourceFile, "png", distinationFile);
+
+	}
+
+}
